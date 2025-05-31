@@ -66,7 +66,7 @@ function App() {
 							🎉
 						</Button>
 					</div>
-					<p className="text-stone-500 text-sm">© Urmish Ramani , {new Date().getFullYear()}</p>
+					<p className="text-stone-500 text-sm fixed bottom-5">© Urmish Ramani , {new Date().getFullYear()}</p>
 				</div>
 
 				<Toaster position="bottom-center" />
