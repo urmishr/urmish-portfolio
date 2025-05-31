@@ -1,10 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
-import { GiCampCookingPot } from "react-icons/gi";
 import confetti from "canvas-confetti";
+
 function App() {
 	const handleClick = () => {
+		toast("Having fun are you? Click me again 🎉");
 		const duration = 5 * 1000;
 		const animationEnd = Date.now() + duration;
 		const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
@@ -35,7 +36,7 @@ function App() {
 	return (
 		<div className="bg-stone-950 text-3xl h-[100vh] w-[100vw] p-8">
 			<div className="w-full">
-				<h1 className="text-white text-center text-5xl pt-10">Hey There 👋🏻</h1>
+				<h1 className="text-white text-center text-5xl pt-10">Hey There {<HiAnimation />}</h1>
 			</div>
 			<div className=" h-[calc(100vh-20vh)] gap-5 flex flex-col justify-center items-center space-y-3">
 				<p className="text-white text-center">Welcome to Urmish's site</p>
@@ -60,13 +61,13 @@ function App() {
 								});
 							}}
 						>
-							Check Status
+							Check Project Status
 						</Button>
 						<Button className="border-2 border-white/50" onClick={handleClick}>
 							🎉
 						</Button>
 					</div>
-					<p className="text-gray-500 text-sm">Click Check Status to see project status</p>
+					<p className="text-stone-500 text-sm">© Urmish Ramani , {new Date().getFullYear()}</p>
 				</div>
 
 				<Toaster position="bottom-center" />
@@ -76,3 +77,7 @@ function App() {
 }
 
 export default App;
+
+function HiAnimation() {
+	return <span className="animate-hii inline-block">👋🏻</span>;
+}
