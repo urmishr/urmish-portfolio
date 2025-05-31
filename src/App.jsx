@@ -2,13 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
 import { GiCampCookingPot } from "react-icons/gi";
-import ConfettiExplosion from "react-confetti-explosion";
-import { useState } from "react";
 import confetti from "canvas-confetti";
 function App() {
-	const [isExplodingConfetti, setIsExplodingConfetti] = useState(false);
-	console.log(isExplodingConfetti);
-
 	const handleClick = () => {
 		const duration = 5 * 1000;
 		const animationEnd = Date.now() + duration;
@@ -38,7 +33,6 @@ function App() {
 	};
 	return (
 		<div className="bg-stone-950 text-3xl h-[100vh] w-[100vw] p-8">
-			<ConfettiExplosion />
 			<div className="w-full">
 				<h1 className="text-white text-center text-5xl pt-10">Hey There 👋🏻</h1>
 			</div>
@@ -50,7 +44,7 @@ function App() {
 					onClick={() =>
 						toast("Portfolio is cooking...", {
 							style: {
-								fontSize: "1rem",
+								fontSize: "1.1rem",
 							},
 							icon: <GiCampCookingPot />,
 							action: {
