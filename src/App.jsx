@@ -5,7 +5,6 @@ import confetti from "canvas-confetti";
 
 function App() {
 	const handleClick = () => {
-		toast("Having fun are you? Click me again 🎉");
 		const duration = 5 * 1000;
 		const animationEnd = Date.now() + duration;
 		const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
