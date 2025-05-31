@@ -33,7 +33,7 @@ function App() {
 	};
 
 	return (
-		<div className="bg-stone-950 text-3xl h-[100vh] w-[100vw] p-8">
+		<div className="bg-stone-950 text-3xl h-[100vh] w-[100vw] p-8 relative">
 			<div className="w-full">
 				<h1 className="text-white text-center text-5xl pt-10">Hey There {<HiAnimation />}</h1>
 			</div>
@@ -66,7 +66,7 @@ function App() {
 							🎉
 						</Button>
 					</div>
-					<p className="text-stone-500 text-sm fixed bottom-5">© Urmish Ramani , {new Date().getFullYear()}</p>
+					<p className="text-stone-500 text-sm absolute bottom-5">© Urmish Ramani , {new Date().getFullYear()}</p>
 				</div>
 
 				<Toaster position="bottom-center" />
