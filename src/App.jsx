@@ -38,7 +38,7 @@ function App() {
 				<h1 className="text-white text-center text-5xl pt-10">Hey There 👋🏻</h1>
 			</div>
 			<div className=" h-[calc(100vh-20vh)] gap-5 flex flex-col justify-center items-center space-y-3">
-				<p className="text-white">Welcome to Urmish's site</p>
+				<p className="text-white text-center">Welcome to Urmish's site</p>
 				<div className="flex flex-col items-center gap-4">
 					<div className="flex gap-3">
 						<Button
