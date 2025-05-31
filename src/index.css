@@ -119,14 +119,29 @@
 }
 
 @theme {
-	--animate-hii: hi 1s ease-in-out infinite;
+	--animate-hii: hi 2s ease-in-out infinite;
 
 	@keyframes hi {
 		0%,
 		100% {
-			transform: rotate(90deg);
+			transform: rotate(0deg);
 		}
-		50% {
+		15% {
+			transform: rotate(20deg);
+		}
+		30% {
+			transform: rotate(-15deg);
+		}
+		45% {
+			transform: rotate(20deg);
+		}
+		60% {
+			transform: rotate(-15deg);
+		}
+		75% {
+			transform: rotate(20deg);
+		}
+		90% {
 			transform: rotate(0deg);
 		}
 	}
