@@ -2,7 +2,14 @@ import { Button } from "@/components/ui/button";
 import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
 import confetti from "canvas-confetti";
-
+import {
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuLabel,
+	DropdownMenuSeparator,
+	DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 function App() {
 	const handleClick = () => {
 		const duration = 5 * 1000;
@@ -33,45 +40,70 @@ function App() {
 	};
 
 	return (
-		<div className="bg-stone-950 text-3xl h-[100vh] w-[100vw] p-8 relative">
-			<div className="w-full">
-				<h1 className="text-white text-center text-5xl pt-10">Hey There {<HiAnimation />}</h1>
-			</div>
-			<div className=" h-[calc(100vh-20vh)] gap-5 flex flex-col justify-center items-center space-y-3">
-				<p className="text-white text-center">Welcome to Urmish's site</p>
-				<div className="flex flex-col items-center gap-4">
-					<div className="flex gap-3">
-						<Button
-							className="toast-button"
-							variant="outline"
-							onClick={() => {
-								const myPromise = new Promise((resolve) => {
-									setTimeout(() => {
-										resolve({ status: "Coming Soon" });
-									}, 3000);
-								});
-
-								toast.promise(myPromise, {
-									loading: "Loading project status...",
-									success: (data) => {
-										return `Project status : ${data.status}`;
-									},
-									error: "Error",
-								});
-							}}
-						>
-							Check Project Status
-						</Button>
-						<Button className="border-2 border-white/50" onClick={handleClick}>
-							🎉
-						</Button>
-					</div>
-					<p className="text-stone-500 text-sm absolute bottom-5">© Urmish Ramani , {new Date().getFullYear()}</p>
+		<>
+			<div className="bg-stone-950 text-3xl h-[100vh] w-[100vw] p-8 relative">
+				<div className="w-full">
+					<h1 className="text-white text-center text-5xl pt-10">Hey There {<HiAnimation />}</h1>
 				</div>
+				<div className=" h-[calc(100vh-20vh)] gap-5 flex flex-col justify-center items-center space-y-3">
+					<p className="text-white text-center">Welcome to Urmish's site</p>
+					<div className="flex flex-col items-center gap-4">
+						<div className="flex gap-3">
+							<Button
+								className="toast-button"
+								variant="outline"
+								onClick={() => {
+									const myPromise = new Promise((resolve) => {
+										setTimeout(() => {
+											resolve({ status: "Coming Soon" });
+										}, 3000);
+									});
 
-				<Toaster position="bottom-center" />
+									toast.promise(myPromise, {
+										loading: "Loading project status...",
+										success: (data) => {
+											return `Project status : ${data.status}`;
+										},
+										error: "Error",
+									});
+								}}
+							>
+								Check Project Status
+							</Button>
+							<Button className="border-2 border-white/50" onClick={handleClick}>
+								🎉
+							</Button>
+						</div>
+						<DropdownMenu>
+							<DropdownMenuTrigger className="focus:outline-none focus:ring-0">
+								<Button className="border focus:outline-none focus:ring-0 cursor-pointer border-white/50">
+									My Other Projects <span className="ml-3">&#9660;</span>
+								</Button>
+							</DropdownMenuTrigger>
+							<DropdownMenuContent>
+								<DropdownMenuItem>
+									<img src="/logo-green-round.png" alt="natours logo" className="size-6 mx-1.5" />
+
+									<a href="https://natours.urmish.site" target="_blank">
+										Natours
+									</a>
+								</DropdownMenuItem>
+								<DropdownMenuItem>
+									<img src="/image.png" alt="natours logo" className="h-6" />
+
+									<a href="https://the-wild-oasis-1011.netlify.app/" target="_blank">
+										The Wild Oasis
+									</a>
+								</DropdownMenuItem>
+							</DropdownMenuContent>
+						</DropdownMenu>
+						<p className="text-stone-500 text-sm absolute bottom-5">© Urmish Ramani , {new Date().getFullYear()}</p>
+					</div>
+
+					<Toaster position="bottom-center" />
+				</div>
 			</div>
-		</div>
+		</>
 	);
 }
 
